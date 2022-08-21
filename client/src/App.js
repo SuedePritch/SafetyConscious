@@ -16,7 +16,7 @@ import Main from './pages/Main/Main';
 
 // APOLLO CONFIG
 //THIS HTTPLINK NEEDS TO BE UPDATED TO THE DEPLOYED URL 
-const httpLink = createHttpLink({uri: 'https://127.0.0.1:3002/graphql',cache: new InMemoryCache(),});
+const httpLink = createHttpLink({uri: 'http://127.0.0.1:3002/graphql',cache: new InMemoryCache(),});
 const authLink = setContext((_, { headers }) => {const token = localStorage.getItem('id_token');return {headers: {...headers,authorization: token ? `Bearer ${token}` : '',},}});
 const client = new ApolloClient({link: authLink.concat(httpLink),cache: new InMemoryCache(),});
 

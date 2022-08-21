@@ -1,8 +1,8 @@
 
 import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
-import { LOGIN_USER } from '../utils/mutations.js';
-import Auth from '../utils/auth.js';
+import { LOGIN_USER } from '../../utils/mutations';
+import Auth from '../../utils/auth.js';
 
 function LoginForm() {
     // BUILD MUTATION FOR LOGIN_USER
