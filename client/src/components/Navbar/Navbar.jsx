@@ -23,13 +23,13 @@ function Navbar() {
 return (
     <div>
         <div className="navbar-container">
-            <h3>Safety Conscious</h3>
-            {loggedIn ?  <li onClick={signout}>Log Out</li>
+            <h2>Safety Conscious</h2>
+            {loggedIn ?  <button onClick={signout}>Log Out</button>
     :
-        <>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/signup">Signup</Link></li>
-        </>
+        <div>
+        <button><Link to="/login">Login</Link></button>
+        <button><Link to="/signup">Signup</Link></button>
+        </div>
 }
         </div>
     </div>

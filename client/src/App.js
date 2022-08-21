@@ -14,10 +14,6 @@ import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import Main from './pages/Main/Main';
 
-
-require('dotenv').config();
-
-
 // APOLLO CONFIG
 //THIS HTTPLINK NEEDS TO BE UPDATED TO THE DEPLOYED URL 
 const httpLink = createHttpLink({uri: 'https://127.0.0.1:3002/graphql',cache: new InMemoryCache(),});

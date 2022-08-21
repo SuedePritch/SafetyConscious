@@ -1,6 +1,10 @@
 :root{
-  --clr-primary-500:hsl(0, 0%, 5%);
-  --clr-accent-500:hsl(108, 100%, 50%);
+  --clr-primary-500:hsl(0, 0%, 9%);
+  --clr-accent-500:hsl(0, 0%, 80%);
+
+
+  --navbar-height:8vh;
+  --sidenav-width:2rem;
 }
 *,
 *::before,
@@ -10,7 +14,12 @@
   box-sizing: border-box;
 }
 
-.App{
-  background: var(--clr-primary-500);
-  height:100vh;
+.main-content{
+  position: absolute;
+  padding: 0.5rem;
+  top:var(--navbar-height);
+  left:var(--sidenav-width);
+  height: calc(100vh - var(--navbar-height));
+  width:  calc(100vw - var(--sidenav-width));
+  background: var(--clr-accent-500);
 }

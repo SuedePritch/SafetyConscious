@@ -5,13 +5,13 @@
     align-items: center;
     background: var(--clr-primary-500);
     color: var(--clr-accent-500);
-    box-shadow: 0 0 12px 1px var(--clr-accent-500);
-    // SIDENAV HEIGHT NEEDS TO BE CHANGED IF THIS IS CHANGED
-    height:5vh;
-    z-index: 2;
+    height:var(--navbar-height);
 }
-button{
+button,
+a{
     background: none;
     border:none;
+    padding: 0.25rem;
     color: var(--clr-accent-500);
+    text-decoration: none;
 }
