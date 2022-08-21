@@ -1,16 +1,21 @@
 .navbar-container{
     padding:0 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background: var(--clr-primary-500);
     color: var(--clr-accent-500);
     height:var(--navbar-height);
 }
+.navbar-title{
+    position: absolute;
+    left:1rem;
+}
 button,
 a{
     background: none;
     border:none;
+    margin-left: 0.75rem;
     padding: 0.25rem;
     color: var(--clr-accent-500);
     text-decoration: none;

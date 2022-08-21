@@ -1,0 +1,142 @@
+// SVG styling 
+//This is how where to change hamburger size
+//Should stay a square
+//z-index just keeps it on top of the menu when opened
+svg{
+    position: relative;
+    z-index: 3;
+    width:30px;
+    height:30px;
+    
+}
+//Sets the color of the hamburger
+#Hamburger > line{
+    stroke: var(--clr-accent-500);
+    stroke-width: 20px;
+}
+
+
+//basic styling for the button 
+.menu-toggle-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border:none;
+}
+//placed onto button when menuState is true
+.animateMenuHamburgerOpen{
+    
+    svg{
+        animation: svgRotate 2000ms ease forwards;
+    }
+    #bottom{
+        animation: hamburgerToXBottom 700ms ease forwards;
+    }
+    
+    #top{
+        transform-origin: 100px;
+        animation: hamburgerToXTop 700ms ease forwards;
+    }
+}
+//placed onto button when menuState is false
+.animateMenuHamburgerClose{
+    svg{
+        animation: undoSvgRotate 1000ms ease forwards;
+    }
+    #bottom{
+        animation: undoHamburgerToXBottom 900ms ease forwards;
+    }
+    
+    #top{
+        transform-origin: 100px;
+        animation: undoHamburgerToXTop 900ms ease forwards;
+    }
+}
+
+
+
+
+//SVG spin from hamburger to X
+@keyframes svgRotate {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(315deg);
+    }
+}
+
+//Moves bottom line of hamburger to center
+@keyframes hamburgerToXBottom {
+    0%{
+        transform: 
+        translateY(0)
+    }
+    100%{
+        transform: 
+        translateY(-50px)
+    }
+}
+//Moves top line of hamburger to center and then rotates 90deg
+@keyframes hamburgerToXTop {
+    0%{
+        transform: 
+        translate(0, 0)
+        rotate(0)
+    }
+    50%{
+        transform: 
+            translateY(50px)
+    }
+    100%{
+        
+        transform: 
+        translateX(-50px)
+        rotate(90deg)
+    }
+}
+
+
+
+
+//SVG spin from x to hamburger
+@keyframes undoSvgRotate {
+    from{
+        transform: rotate(315deg);
+    }
+    to{
+        transform: rotate(0);
+    }
+}
+
+//moves bottom line of hamburger from center to bottom
+@keyframes undoHamburgerToXBottom {
+    0%{
+        transform: 
+        translateY(-50px)
+    }
+    100%{
+        transform: 
+        translateY(0)
+    }
+}
+//rotates top line back to parallel and moves top line of hamburger from center to top
+@keyframes undoHamburgerToXTop {
+    0%{
+        transform: 
+        translateX(-50px)
+        rotate(90deg)
+        
+    }
+    50%{
+        transform: 
+            translateY(50px)
+    }
+    100%{
+        transform: 
+        translate(0, 0)
+        rotate(0)
+        
+    }
+}

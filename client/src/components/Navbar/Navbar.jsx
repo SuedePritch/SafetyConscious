@@ -1,5 +1,7 @@
 import React,{ useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
+
+import Menu from './Menu/Menu'
 import './Navbar.scss'
 function Navbar() {
     const [loggedIn, setLoggedIn] = useState(false)
@@ -23,14 +25,15 @@ function Navbar() {
 return (
     <div>
         <div className="navbar-container">
-            <h2>Safety Conscious</h2>
+            <h2 className='navbar-title'>Safety Conscious</h2>
             {loggedIn ?  <button onClick={signout}>Log Out</button>
     :
-        <div>
+        <div className='nav-links'>
         <button><Link to="/login">Login</Link></button>
         <button><Link to="/signup">Signup</Link></button>
         </div>
 }
+        <Menu/>
         </div>
     </div>
 )

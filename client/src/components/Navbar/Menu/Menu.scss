@@ -1,0 +1,67 @@
+/* 
+Menu styling
+Hides menu on pageload 
+*/
+.Menu{
+    position: absolute;
+    right:-200px;
+    top:0;
+    padding:3rem;
+    background: var(--clr-primary-500);
+    border-bottom-left-radius: 15px;
+    z-index: 2;
+}
+
+
+
+/* Slides menu open*/
+.Menu.Open{
+    animation: menuOpenAnimation 1000ms ease-in-out forwards;
+}
+@keyframes menuOpenAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-200px);
+        box-shadow: inset 5px -5px 10px 0 var(--clr-primary-500);
+    }
+}
+
+
+/* Slides menu closed */
+.Menu.Closed{
+    animation: menuClosedAnimation 1000ms cubic-bezier(0,-0.01,1,.15) forwards;
+    /* transform: translateX(0); */
+}
+@keyframes menuClosedAnimation {
+    from{
+        transform: translateX(-200px);
+        box-shadow: inset 5px -5px 10px 0 var(--clr-primary-500);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+
+/* 
+styling for the list items
+setup to be flexible as most common use would be links
+*/
+.menu-ul > *{
+    padding:1rem;
+    list-style: none;
+    
+}
+
+#logoSvg{
+    padding:0;
+    height:60px;
+    width:60px;
+    margin-right:1rem;
+
+}
+#logoSvg > circle{
+    stroke:var(--clr-primary-500)
+}
