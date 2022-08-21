@@ -1,0 +1,17 @@
+.navbar-container{
+    padding:0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--clr-primary-500);
+    color: var(--clr-accent-500);
+    box-shadow: 0 0 12px 1px var(--clr-accent-500);
+    // SIDENAV HEIGHT NEEDS TO BE CHANGED IF THIS IS CHANGED
+    height:5vh;
+    z-index: 2;
+}
+button{
+    background: none;
+    border:none;
+    color: var(--clr-accent-500);
+}

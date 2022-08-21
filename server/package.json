@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "watch":"nodemon server.js",
+    "watch": "nodemon server.js",
     "start": "node server.js"
   },
   "author": "",
@@ -15,7 +15,8 @@
     "graphql": "^16.3.0",
     "mongoose": "^6.1.8",
     "bcrypt": "^4.0.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

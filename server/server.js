@@ -6,7 +6,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -15,6 +15,8 @@ const server = new ApolloServer({
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+// app.get('/', (req, res) => {  res.sendFile(path.join(__dirname, '../client/build/index.html'));});
+// app.get('/*', (req, res) => {  res.sendFile(path.join(__dirname, '../client/build/index.html'));})
 
 // if we're in production, serve client/build as static assets
 // if (process.env.NODE_ENV === 'production') {
