@@ -8,8 +8,6 @@ import { setContext } from '@apollo/client/link/context';
 import './App.css'
 
 // Component Imports
-import Navbar from './components/Navbar/Navbar';
-import SideNav from './components/SideNav/SideNav';
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import Main from './pages/Main/Main';
@@ -27,8 +25,6 @@ function App() {
     <ApolloProvider client={client}>
     <Router>
       <>
-        <Navbar />
-        <SideNav/>
         
         <Routes>
           {/* Auth Routes */}
