@@ -44,7 +44,7 @@ return (
                     <input placeholder='Password' name='password' type='password' id='password'
                         onChange={handleChange}></input>
                 </div>
-                <button className="form-field signup" type='submit' >Signup </button>
+                <button className="form-field form-field-button signup" type='submit' >Signup </button>
             </form>
     </div>
 )

@@ -11,12 +11,13 @@
     position: absolute;
     left:1rem;
 }
-button,
-a{
+.nav-link{
     background: none;
     border:none;
-    margin-left: 0.75rem;
     padding: 0.25rem;
+    margin-right: 0.5rem;
+}
+.nav-link a{
     color: var(--clr-accent-500);
     text-decoration: none;
 }

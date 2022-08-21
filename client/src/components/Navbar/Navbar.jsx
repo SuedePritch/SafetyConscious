@@ -28,9 +28,9 @@ return (
             <h2 className='navbar-title'>Safety Conscious</h2>
             {loggedIn ?  <button onClick={signout}>Log Out</button>
     :
-        <div className='nav-links'>
-        <button><Link to="/login">Login</Link></button>
-        <button><Link to="/signup">Signup</Link></button>
+        <div>
+        <button className='nav-link'><Link to="/login">Login</Link></button>
+        <button className='nav-link'><Link to="/signup">Signup</Link></button>
         </div>
 }
         <Menu/>

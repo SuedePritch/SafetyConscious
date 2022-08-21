@@ -4,17 +4,16 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12,1fr);
 }
-.form button{
-    margin:1rem 0;
-    padding: 1rem;
-    background: var(--clr-primary-500);
-}
 .form-field > *{
     width: 100%;
 }
 .form-field input{
-    margin:1rem 0;
+    // margin:1rem 0;
     padding: 1rem;
+}
+.form-field-button{
+    background: var(--clr-primary-500);
+    color: var(--clr-accent-500);
 }
 
 
@@ -22,8 +21,8 @@
 
 
 .login{
-    grid-column: 2 / 7;
+    grid-column: 3 / 11;
 }
 .signup{
-    grid-column: 2 / 7;
+    grid-column: 3 / 11;
 }
