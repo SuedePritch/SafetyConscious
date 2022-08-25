@@ -26,14 +26,16 @@ return (
     <div>
         <div className="navbar-container">
             <h2 className='navbar-title'>Safety Conscious</h2>
-            {loggedIn ?  <button onClick={signout}>Log Out</button>
-    :
-        <div>
-        <button className='nav-link'><Link to="/login">Login</Link></button>
-        <button className='nav-link'><Link to="/signup">Signup</Link></button>
-        </div>
-}
-        <Menu/>
+            {
+            loggedIn ?  
+            <button className='nav-link' onClick={signout}><Link to="/">Logout</Link></button>
+            :
+            <div>
+            <button className='nav-link'><Link to="/login">Login</Link></button>
+            <button className='nav-link'><Link to="/signup">Signup</Link></button>
+            </div>
+            }   
+            <Menu/>
         </div>
     </div>
 )

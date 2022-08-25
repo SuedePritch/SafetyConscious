@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import MenuHamburger from './MenuHamburger/MenuHamburger'
 import './Menu.scss'
 
@@ -24,12 +25,15 @@ function Menu() {
             menuState ? 'Open' : 'Closed'
             }`}>
               <ul className='menu-ul'>
-                  <li>Option 1</li>
-                  <li>Option 2</li>
-                  <li>Option 3</li>
-                  <li>Option 4</li>
-                  <li>Option 5</li>
-                  <li>Option 6</li>
+                  <li><Link to="/company">Company</Link></li>
+                  <li><Link to="/company">Projects</Link></li>
+                  <li><Link to="/company">Employees</Link></li>
+                  <li><Link to="/company">Policies & Procedures</Link></li>
+                  <li><Link to="/company">Regulations</Link></li>
+                  <li><Link to="/company">Inspection Forms</Link></li>
+                  <li><Link to="/company">Incident Reporting</Link></li>
+                  <li><Link to="/company">Safety Permits</Link></li>
+                  <li><Link to="/company">FLHA</Link></li>
               </ul>
           </div>
 

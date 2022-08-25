@@ -4,9 +4,10 @@ Hides menu on pageload
 */
 .Menu{
     position: absolute;
-    right:-200px;
+    right:-250px;
     top:0;
-    padding:3rem;
+    padding-top:3rem;
+    padding:2rem;
     background: var(--clr-primary-500);
     border-bottom-left-radius: 15px;
     z-index: 2;
@@ -23,7 +24,7 @@ Hides menu on pageload
         transform: translateX(0);
     }
     to{
-        transform: translateX(-200px);
+        transform: translateX(-250px);
         box-shadow: inset 5px -5px 10px 0 var(--clr-primary-500);
     }
 }
@@ -36,7 +37,7 @@ Hides menu on pageload
 }
 @keyframes menuClosedAnimation {
     from{
-        transform: translateX(-200px);
+        transform: translateX(-250px);
         box-shadow: inset 5px -5px 10px 0 var(--clr-primary-500);
     }
     to{
@@ -49,9 +50,14 @@ Hides menu on pageload
 styling for the list items
 setup to be flexible as most common use would be links
 */
-.menu-ul > *{
-    padding:1rem;
+.menu-ul li{
+    padding:1rem 0 ;
+    text-align: left;
+}
+.menu-ul li > *{
     list-style: none;
+    color: var(--clr-accent-500);
+    text-decoration: none;
     
 }
 
