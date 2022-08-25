@@ -23,6 +23,7 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "jwt-decode": "^3.1.2"
+    "jwt-decode": "^3.1.2",
+    "dotenv": "^16.0.1"
   }
 }

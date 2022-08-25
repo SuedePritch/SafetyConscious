@@ -11,7 +11,7 @@ export const LOGIN_USER = gql`
         }
     }
     }
-`;
+`
 
 export const ADD_USER = gql`
     mutation addUser($username: String!, $email: String!, $password: String!) {
@@ -26,5 +26,9 @@ export const ADD_USER = gql`
 `
 
 export const FLHA_FORM_SUBMIT = gql`
-
-`
+    mutation submitFLHA($jobLocation: String!) {
+    submitFLHA(jobLocation: $jobLocation) {
+        jobLocation
+    }
+}
+`;
