@@ -24,3 +24,7 @@ export const ADD_USER = gql`
         }
     }
 `
+
+export const FLHA_FORM_SUBMIT = gql`
+
+`

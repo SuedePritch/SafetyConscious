@@ -11,6 +11,7 @@ import './App.css'
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import Main from './pages/Main/Main';
+import FLHA from './pages/FLHA/FLHA';
 
 // APOLLO CONFIG
 //THIS HTTPLINK NEEDS TO BE UPDATED TO THE DEPLOYED URL 
@@ -33,6 +34,9 @@ function App() {
 
           {/* Main Landing Page */}
           <Route path='/' element={<Main />} />
+
+          {/* Main directory */}
+          <Route path='/FLHA' element={<FLHA />} />
 
           {/* Wildcard/404 Routes - Needs to stay at the bottom */}
           <Route path='*'element={<h1 className='display-2'>Wrong page!</h1>}/>

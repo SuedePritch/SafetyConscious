@@ -4,7 +4,10 @@ Hides menu on pageload
 */
 .Menu{
     position: absolute;
+    // This needs to correspond to the menuOpenAnimation/menuClosedAnimation values
     right:-250px;
+
+    
     top:0;
     padding-top:3rem;
     padding:2rem;

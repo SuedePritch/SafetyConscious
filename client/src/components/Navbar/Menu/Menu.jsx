@@ -33,7 +33,7 @@ function Menu() {
                   <li><Link to="/company">Inspection Forms</Link></li>
                   <li><Link to="/company">Incident Reporting</Link></li>
                   <li><Link to="/company">Safety Permits</Link></li>
-                  <li><Link to="/company">FLHA</Link></li>
+                  <li><Link to="/FLHA">FLHA</Link></li>
               </ul>
           </div>
 
