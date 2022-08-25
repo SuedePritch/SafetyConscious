@@ -18,9 +18,6 @@ const resolvers = {
   
     },
 
-
-
-
     //FLHA
     //all FLHAs
     allFLHAs: async () => {

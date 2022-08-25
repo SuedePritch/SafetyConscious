@@ -9,7 +9,7 @@ const flhaSchema = new Schema(
         dateCreated:{
             type: Date,
             default: Date.now()
-        }
+        },
     }
 );
 
