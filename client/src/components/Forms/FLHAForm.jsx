@@ -8,6 +8,8 @@ function FLHAForm() {
 const [submitFLHA] = useMutation(FLHA_FORM_SUBMIT);
 const [flhaFormData, setFlhaFormData] = useState();
 const [numberOfJobTasks, setNumberOfJobTasks] = useState([]);
+
+
 //This takes the values from the inputs and updates the FlhaForm State
 const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,7 +39,7 @@ const handleFormSubmit = async (event) => {
 };
 //This adds a new div that contains the fields for a new job task
 const handleAddJobTask = () =>{
-    setNumberOfJobTasks(numberOfJobTasks.concat(<JobTask key={numberOfJobTasks.length} />));
+        setNumberOfJobTasks(numberOfJobTasks.concat(<JobTask key={numberOfJobTasks.length} />));
 }
 
 

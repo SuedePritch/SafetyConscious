@@ -45,6 +45,10 @@ h3{
 .primarytask{
     grid-column: span 4;
 }
+
+.job-task-container{
+    border:3px solid black;
+}
 .task{
     grid-column: span 4;
 }
