@@ -47,14 +47,16 @@ h3{
 }
 
 .job-task-container{
-    border:3px solid black;
+    border: 2px solid var(--clr-primary-500);
+    grid-column: span 12;
+    grid-row: span 2;
 }
-.task{
-    grid-column: span 4;
-}
-.hazard{
-    grid-column: span 4;
-}
-.control{
-    grid-column: span 4;
-}
+// .task{
+//     grid-column: span 4;
+// }
+// .hazard{
+//     grid-column: span 4;
+// }
+// .control{
+//     grid-column: span 4;
+// }

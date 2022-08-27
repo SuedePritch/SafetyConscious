@@ -7,7 +7,12 @@ import JobTask from '../JobTask/JobTask'
 function FLHAForm() {
 const [submitFLHA] = useMutation(FLHA_FORM_SUBMIT);
 const [flhaFormData, setFlhaFormData] = useState();
-const [numberOfJobTasks, setNumberOfJobTasks] = useState([]);
+const [numberOfJobTasks, setNumberOfJobTasks] = useState([
+    <JobTask key="0" />,
+    <JobTask key="1" />,
+    <JobTask key="2 "/>,
+    <JobTask key="3" />
+]);
 
 
 //This takes the values from the inputs and updates the FlhaForm State
