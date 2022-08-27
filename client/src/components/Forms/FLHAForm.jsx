@@ -10,19 +10,19 @@ function FLHAForm() {
         const handleFormSubmit = async (event) => {
             event.preventDefault();
             try {
-                const flhaFormResponse = await submitFLHA ({
+                await submitFLHA ({
                     variables: { 
-                        jobLocation: flhaFormData.jobLocation
+                        jobLocation: flhaFormData.jobLocation,
+                        supervisor: flhaFormData.supervisor,
+                        primarytask: flhaFormData.primarytask
                     },
                 });
-                console.log(flhaFormResponse)
             } catch (e) {
             console.log(e)
                 alert('Submission Failed')
             }
         };
         const handleChange = (event) => {
-            console.log(flhaFormData);
             const { name, value } = event.target;
             setFlhaFormData({
                 ...flhaFormData,
@@ -32,12 +32,18 @@ function FLHAForm() {
   return (
     <div>
         <div className='main-content'>
+        <h3>Field Level Hazard Assesment</h3>
         <form className='form' onSubmit={handleFormSubmit}>
-                <div className='form-field signup'>
-                    <input placeholder='jobLocation' name= 'jobLocation' type='jobLocation' id='jobLocation' 
-                        onChange={handleChange}></input>
-                </div>
-                <button className="form-field form-field-button signup" type='submit' >Submit </button>
+                <div className='form-field jobLocation'><input placeholder='Worksite' name= 'jobLocation' type='jobLocation' id='jobLocation' onChange={handleChange}></input></div>
+                <div className='form-field supervisor'><input placeholder='Supervisor' name= 'supervisor' type='supervisor' id='supervisor' onChange={handleChange}></input></div>
+                <div className='form-field primarytask'><input placeholder='Primary Task' name= 'primarytask' type='primarytask' id='primarytask' onChange={handleChange}></input></div>
+                
+                
+                
+                
+                
+                
+                <button className="form-field form-field-button flha-submit" type='submit' >Submit </button>
             </form>
     </div>
     </div>

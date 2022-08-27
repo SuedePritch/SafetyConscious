@@ -1,15 +1,18 @@
+h3{
+    margin:1rem 0 ;
+}
 .form{
     height:100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12,1fr);
+    gap:0.25rem;
 }
 .form-field > *{
     width: 100%;
 }
 .form-field input{
-    // margin:1rem 0;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 .form-field-button{
     background: var(--clr-primary-500);
@@ -25,4 +28,20 @@
 }
 .signup{
     grid-column: 3 / 11;
+}
+
+// FLHA Styling
+
+.flha-submit{
+    grid-column: 2 / 12;
+    grid-row: 11 / 12;
+}
+.jobLocation{
+    grid-column: span 4;
+}
+.supervisor{
+    grid-column: span 4;
+}
+.primarytask{
+    grid-column: span 4;
 }

@@ -26,9 +26,16 @@ export const ADD_USER = gql`
 `
 
 export const FLHA_FORM_SUBMIT = gql`
-    mutation Mutation($jobLocation: String!) {
-    submitFLHA(jobLocation: $jobLocation) {
+    mutation submitFLHA($jobLocation: String!, $supervisor: String!, $primarytask: String!) {
+    submitFLHA(
+        jobLocation: $jobLocation, 
+        supervisor: $supervisor, 
+        primarytask:$primarytask
+        
+        ) {
     jobLocation
+    supervisor
+    primarytask
   }
 }
 `;

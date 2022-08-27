@@ -6,6 +6,14 @@ const flhaSchema = new Schema(
             type: String,
             required: true
         },
+        supervisor: {
+            type: String,
+            required: true
+        },
+        primarytask: {
+            type: String,
+            required: true
+        },
         dateCreated:{
             type: Date,
             default: Date.now()

@@ -17,6 +17,8 @@ const typeDefs = gql`
     type FLHA {
         _id: ID,
         jobLocation: String,
+        supervisor: String,
+        primarytask: String,
         dateCreated: String
     }
 
@@ -34,7 +36,7 @@ type Mutation {
     login(email: String!, password: String!): Auth
 
     #FLHA
-    submitFLHA(jobLocation: String!): FLHA
+    submitFLHA(jobLocation: String!, supervisor: String! primarytask: String!): FLHA
 }
 `;
 
