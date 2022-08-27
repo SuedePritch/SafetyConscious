@@ -28,7 +28,7 @@ function Menu() {
                   <li><Link to="/company">Company</Link></li>
                   <li><Link to="/company">Projects</Link></li>
                   <li><Link to="/company">Employees</Link></li>
-                  <li><Link to="/company">Policies & Procedures</Link></li>
+                  <li><Link to="/company">SOPs</Link></li>
                   <li><Link to="/company">Regulations</Link></li>
                   <li><Link to="/company">Inspection Forms</Link></li>
                   <li><Link to="/company">Incident Reporting</Link></li>
