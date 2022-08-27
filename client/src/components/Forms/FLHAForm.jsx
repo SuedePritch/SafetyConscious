@@ -37,7 +37,6 @@ const handleFormSubmit = async (event) => {
 };
 //This adds a new div that contains the fields for a new job task
 const handleAddJobTask = () =>{
-    setNumberOfJobTasks(numberOfJobTasks + 1)
     setNumberOfJobTasks(numberOfJobTasks.concat(<JobTask key={numberOfJobTasks.length} />));
 }
 
