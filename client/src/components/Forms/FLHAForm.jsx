@@ -10,7 +10,7 @@ const [flhaFormData, setFlhaFormData] = useState();
 const [numberOfJobTasks, setNumberOfJobTasks] = useState([
     <JobTask key="0" />,
     <JobTask key="1" />,
-    <JobTask key="2 "/>,
+    <JobTask key="2" />,
     <JobTask key="3" />
 ]);
 
