@@ -45,7 +45,7 @@ type Mutation {
 
     #FLHA
     createJobTask(task:String!, hazard:String!, control:String!): JobTask
-    submitFLHA(jobLocation: String!, supervisor: String!, primarytask: String!, jobTask:[ID]!): FLHA
+    submitFLHA(jobLocation: String!, supervisor: String!, primarytask: String!, jobTask:[ID]): FLHA
 }
 `;
 

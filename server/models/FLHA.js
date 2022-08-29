@@ -4,19 +4,23 @@ const flhaSchema = new Schema(
     {
         jobLocation: {
             type: String,
-            required: true
+            required: true,
+            unique:false
         },
         supervisor: {
             type: String,
-            required: true
+            required: true,
+            unique:false
         },
         primarytask: {
             type: String,
-            required: true
+            required: true,
+            unique:false
         },
-        jobTask:[
-            {type: Schema.Types.ObjectId}
-        ],
+        jobTask:[{
+                type: Schema.Types.ObjectId,
+                ref:'jobTask'
+        }],
         dateCreated:{
             type: Date,
             default: Date.now()

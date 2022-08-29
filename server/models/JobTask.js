@@ -4,15 +4,19 @@ const jobTaskSchema = new Schema(
     {
         task: {
             type: String,
-            required: true
+            required: true,
+            unique:false
+            
         },
         hazard: {
             type: String,
-            required: true
+            required: true,
+            unique:false
         },
         control: {
             type: String,
-            required: true
+            required: true,
+            unique:false
         },
     }
 );
