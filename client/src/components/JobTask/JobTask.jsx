@@ -1,25 +1,38 @@
+import { useMutation } from '@apollo/client';
 import React from 'react'
-
+import {CREATE_JOB_TASK} from '../../utils/mutations'
 const jobTaskArray=[];
 function JobTask({setJobTaskState}) {
-  const handleChangeOnJobTask = (event) =>{
+  const [createJobTask, { data, loading, error }] = useMutation(CREATE_JOB_TASK)
+  const handleChangeOnJobTask = async (event) =>{
     
     
     if( event.target.parentNode.parentNode.children[0].children[0].value &&
         event.target.parentNode.parentNode.children[1].children[0].value &&
         event.target.parentNode.parentNode.children[2].children[0].value ){
-          jobTaskArray.push(
-          {
-            task: event.target.parentNode.parentNode.children[0].children[0].value, 
-            hazard: event.target.parentNode.parentNode.children[1].children[0].value, 
-            control: event.target.parentNode.parentNode.children[2].children[0].value 
-          }
-          )
-          setJobTaskState(jobTaskArray)
+          try {
+            await createJobTask ({
+                variables: { 
+                  task: event.target.parentNode.parentNode.children[0].children[0].value, 
+                  hazard: event.target.parentNode.parentNode.children[1].children[0].value, 
+                  control: event.target.parentNode.parentNode.children[2].children[0].value 
+                },
+              });
+              if(!loading){
+                jobTaskArray.push(data.createJobTask._id)
+              }
+              
+            } catch (error) {
+              console.log(error)
+              alert('Submission Failed')
+            }
+            // console.log(jobTaskArray)
         }else{
           return
         }
         
+        console.log(jobTaskArray)
+        setJobTaskState(jobTaskArray)
       }
   return (
     <div className='job-task-container job-task-container-grid' onBlur={handleChangeOnJobTask}>

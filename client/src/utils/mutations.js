@@ -24,6 +24,16 @@ export const ADD_USER = gql`
         }
     }
 `
+export const CREATE_JOB_TASK = gql`
+mutation createJobTask($task: String!, $hazard: String!, $control: String!) {
+  createJobTask(task: $task, hazard: $hazard, control: $control) {
+    _id
+    task
+    hazard
+    control
+  }
+}
+`
 
 export const FLHA_FORM_SUBMIT = gql`
     mutation submitFLHA($jobLocation: String!, $supervisor: String!, $primarytask: String!) {

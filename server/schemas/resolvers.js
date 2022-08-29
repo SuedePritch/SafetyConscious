@@ -77,7 +77,6 @@ const resolvers = {
 
 
     //FLHA
-
     createJobTask: async (parent, args) =>{
       return await JobTask.create(args)
     },
