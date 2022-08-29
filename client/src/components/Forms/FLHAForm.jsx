@@ -30,13 +30,14 @@ const handleChange = (event) => {
 //error message alert if error
 const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(jobTaskState);
     try {
         await submitFLHA ({
             variables: { 
                 jobLocation: flhaFormData.jobLocation,
                 supervisor: flhaFormData.supervisor,
                 primarytask: flhaFormData.primarytask,
-                jobTasks: jobTaskState
+                jobTask: jobTaskState
             },
         });
     } catch (e) {

@@ -40,7 +40,8 @@ export const FLHA_FORM_SUBMIT = gql`
     submitFLHA(
         jobLocation: $jobLocation, 
         supervisor: $supervisor, 
-        primarytask:$primarytask
+        primarytask:$primarytask,
+        jobTask: $jobTask
         
         ) {
     jobLocation
