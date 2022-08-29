@@ -1,7 +1,7 @@
 import React from 'react'
 
 const jobTaskArray=[];
-function JobTask() {
+function JobTask({setJobTaskState}) {
   const handleChangeOnJobTask = (event) =>{
     
     
@@ -15,11 +15,11 @@ function JobTask() {
             control: event.target.parentNode.parentNode.children[2].children[0].value 
           }
           )
-          
+          setJobTaskState(jobTaskArray)
         }else{
           return
         }
-        console.log(jobTaskArray)
+        
       }
   return (
     <div className='job-task-container job-task-container-grid' onBlur={handleChangeOnJobTask}>

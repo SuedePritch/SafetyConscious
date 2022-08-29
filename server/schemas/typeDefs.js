@@ -19,8 +19,16 @@ const typeDefs = gql`
         jobLocation: String,
         supervisor: String,
         primarytask: String,
+        jobTasks: [JobTask],
         dateCreated: String
     }
+    type JobTask{
+        _id:ID,
+        task: String,
+        hazard: String,
+        control:String,
+    }
+    
 
 
 
@@ -32,11 +40,12 @@ type Query{
 }
 type Mutation {
     # USER
-    addUser(username: String!, email: String! password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
     #FLHA
-    submitFLHA(jobLocation: String!, supervisor: String! primarytask: String!): FLHA
+    createJobTask(task:String!, hazard:String!, control:String!): JobTask
+    submitFLHA(jobLocation: String!, supervisor: String!, primarytask: String!, jobTasks:[ID]): FLHA
 }
 `;
 

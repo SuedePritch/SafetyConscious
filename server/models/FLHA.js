@@ -14,6 +14,10 @@ const flhaSchema = new Schema(
             type: String,
             required: true
         },
+        jobTasks:{
+            type: Array
+
+        },
         dateCreated:{
             type: Date,
             default: Date.now()

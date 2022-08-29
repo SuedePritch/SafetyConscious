@@ -7,11 +7,12 @@ import JobTask from '../JobTask/JobTask'
 function FLHAForm() {
 const [submitFLHA] = useMutation(FLHA_FORM_SUBMIT);
 const [flhaFormData, setFlhaFormData] = useState();
+const [jobTaskState, setJobTaskState] = useState();
 const [numberOfJobTasks, setNumberOfJobTasks] = useState([
-    <JobTask key="0" />,
-    <JobTask key="1" />,
-    <JobTask key="2" />,
-    <JobTask key="3" />
+    <JobTask key="0" setJobTaskState={setJobTaskState}/>,
+    <JobTask key="1" setJobTaskState={setJobTaskState}/>,
+    <JobTask key="2" setJobTaskState={setJobTaskState}/>,
+    <JobTask key="3" setJobTaskState={setJobTaskState}/>
 ]);
 
 
@@ -34,7 +35,8 @@ const handleFormSubmit = async (event) => {
             variables: { 
                 jobLocation: flhaFormData.jobLocation,
                 supervisor: flhaFormData.supervisor,
-                primarytask: flhaFormData.primarytask
+                primarytask: flhaFormData.primarytask,
+                jobTasks: jobTaskState
             },
         });
     } catch (e) {
@@ -44,7 +46,7 @@ const handleFormSubmit = async (event) => {
 };
 //This adds a new div that contains the fields for a new job task
 const handleAddJobTask = () =>{
-        setNumberOfJobTasks(numberOfJobTasks.concat(<JobTask key={numberOfJobTasks.length} />));
+        setNumberOfJobTasks(numberOfJobTasks.concat(<JobTask key={numberOfJobTasks.length} setJobTaskState={setJobTaskState}/>));
 }
 
 
