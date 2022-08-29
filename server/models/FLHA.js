@@ -19,15 +19,26 @@ const flhaSchema = new Schema(
         },
         jobTask:[{
                 type: Schema.Types.ObjectId,
-                ref:'jobTask'
+                ref:"JobTask"
         }],
         dateCreated:{
             type: Date,
             default: Date.now()
         },
+    },
+    // set this to use virtual below
+    {
+        toJSON: {
+            virtuals: true,
+        },
     }
 );
+flhaSchema.virtual("JobTask",{
+    ref:'JobTask',
+    localField:'jobTask',
+    foreignField: '_id',
 
+})
 
 const FLHA = model('FLHA', flhaSchema);
 

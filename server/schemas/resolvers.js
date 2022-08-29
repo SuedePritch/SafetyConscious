@@ -21,7 +21,7 @@ const resolvers = {
     //FLHA
     //all FLHAs
     allFLHAs: async () => {
-      return await FLHA.find();
+      return await FLHA.find().populate("jobTask");
     },
 
 

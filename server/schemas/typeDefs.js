@@ -24,7 +24,7 @@ const typeDefs = gql`
         jobLocation: String,
         supervisor: String,
         primarytask: String,
-        jobTask: [ID],
+        jobTask: [JobTask],
         dateCreated: String
     }
     
