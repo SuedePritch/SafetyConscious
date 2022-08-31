@@ -1,4 +1,4 @@
-const { User, FLHA, JobTask} = require('../models');
+const { User, FLHA} = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -77,9 +77,6 @@ const resolvers = {
 
 
     //FLHA
-    createJobTask: async (parent, args) =>{
-      return await JobTask.create(args)
-    },
     submitFLHA: async ( parent, args) => {
       return await FLHA.create(args)
     },

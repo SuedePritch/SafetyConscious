@@ -1,15 +1,11 @@
 import React,{ useState } from "react";
 import { useMutation } from '@apollo/client';
-import { FLHA_FORM_SUBMIT, CREATE_JOB_TASK} from '../../utils/mutations'
-// import JobTask from '../JobTask/JobTask'
+import { FLHA_FORM_SUBMIT} from '../../utils/mutations'
 
-const jobTaskArray=[];
-const jobTaskIdArray=[];
+const jobTaskArray = [];
 function FLHAForm() {
 const [submitFLHA] = useMutation(FLHA_FORM_SUBMIT);
-const [createJobTask, { loading, error, data }] = useMutation(CREATE_JOB_TASK)
 const [flhaFormData, setFlhaFormData] = useState();
-const [jobTaskState, setJobTaskState] = useState();
 
 
 const handleChangeOnJobTask = async (event)=>{
@@ -67,71 +63,64 @@ const handleChange = (event) => {
     });
 };
 
-const createJobTaskHelper = async () =>{
-    console.log(jobTaskArray, "createJobTaskHelper");
-    for (let i = 0; i < jobTaskArray.length; i++) {
-        const jobTaskDataFromArray = jobTaskArray[i];
-        if(jobTaskDataFromArray){
-            try {
-            await createJobTask ({
-                variables: { 
-                    task: jobTaskDataFromArray.task, 
-                    hazard: jobTaskDataFromArray.hazard, 
-                    control:jobTaskDataFromArray.control 
-                }
-            });
-            if(!loading && !error && data){
-                jobTaskIdArray.push(data.createJobTask._id)
-                setJobTaskState(jobTaskIdArray)
-                }
-        } catch (error) {
-            console.log(error)
-        }}
-    }
-    console.log(jobTaskState);
-}
+// const createJobTaskHelper = async () =>{
+//     for (let i = 0; i < jobTaskArray.length; i++) {
+//         const jobTaskDataFromArray = jobTaskArray[i];
+//         if(jobTaskDataFromArray){
+//             try {
+//             await createJobTask ({
+//                 variables: { 
+//                     task: jobTaskDataFromArray.task, 
+//                     hazard: jobTaskDataFromArray.hazard, 
+//                     control:jobTaskDataFromArray.control 
+//                 }
+//             });
+//             if(!loading && !error && data){
+//                 jobTaskIdArray.push(data.createJobTask._id)
+//             }
+//         } catch (error) {
+//             console.log(error)
+//         }}
+//     }
+    
+// }
 //This is triggered when the submit button is pressed
 //prevents form clearing
 //calls submitFLHA mutation and grabs the values from the state
 //error message alert if error
 const handleFormSubmit = async (event) => {
     event.preventDefault();
-    await createJobTaskHelper();
-
-    
-
-
-
-
-
-
-
-
-
-    // try {
-    //     await submitFLHA ({
-    //         variables: { 
-    //             jobLocation: flhaFormData.jobLocation,
-    //             supervisor: flhaFormData.supervisor,
-    //             primarytask: flhaFormData.primarytask,
-    //             jobTask: jobTaskIdArray
-    //         },
-    //     });
-    // } catch (e) {
-    // console.log(e)
-    //     alert('Submission Failed')
-    // }
+    try {
+    await submitFLHA ({
+        variables: { 
+            jobLocation: flhaFormData.jobLocation,
+            supervisor: flhaFormData.supervisor,
+            primarytask: flhaFormData.primarytask,
+            jobTask: jobTaskArray
+        },
+    });
+    } catch (e) {
+    console.log(e)
+        alert('Submission Failed')
+    }
 };
+
+
+
+
+
+
+
 //This adds a new div that contains the fields for a new job task
 const handleAddJobTask = () =>{
     if(numberOfJobTasks.length <= 8){
         setNumberOfJobTasks(numberOfJobTasks.concat(
-       <div className='job-task-container job-task-container-grid' key={numberOfJobTasks.length} id={numberOfJobTasks.length}>
+    <div className='job-task-container job-task-container-grid' key={numberOfJobTasks.length} id={numberOfJobTasks.length}>
         <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
         <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
         <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
-      </div>
-      ));
+    </div>
+    ));
     }
 }
 
@@ -148,13 +137,7 @@ return (
                 {numberOfJobTasks.length === 9 ?
                 <button type="button" className='add-job-task' disabled>Max Job Tasks</button>:
                 <button type="button" className='add-job-task' onClick={handleAddJobTask}>Add Job Task</button>
-
                 }
-                
-                
-                
-                
-                
                 <button className="form-field form-field-button flha-submit" onClick={handleFormSubmit}>Submit</button>
             </form>
     </div>
