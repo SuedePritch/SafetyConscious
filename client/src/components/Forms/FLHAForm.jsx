@@ -11,8 +11,7 @@ const [jobTaskState, setJobTaskState] = useState();
 const [numberOfJobTasks, setNumberOfJobTasks] = useState([
     <JobTask key="0" setJobTaskState={setJobTaskState}/>,
     <JobTask key="1" setJobTaskState={setJobTaskState}/>,
-    <JobTask key="2" setJobTaskState={setJobTaskState}/>,
-    <JobTask key="3" setJobTaskState={setJobTaskState}/>
+    <JobTask key="2" setJobTaskState={setJobTaskState}/>
 ]);
 
 
@@ -47,7 +46,9 @@ const handleFormSubmit = async (event) => {
 };
 //This adds a new div that contains the fields for a new job task
 const handleAddJobTask = () =>{
+    if(numberOfJobTasks.length <= 8){
         setNumberOfJobTasks(numberOfJobTasks.concat(<JobTask key={numberOfJobTasks.length} setJobTaskState={setJobTaskState}/>));
+    }
 }
 
 
@@ -60,7 +61,11 @@ return (
                 <div className='form-field supervisor'><input placeholder='Supervisor' name= 'supervisor' type='supervisor' id='supervisor' onChange={handleChange}></input></div>
                 <div className='form-field primarytask'><input placeholder='Primary Task' name= 'primarytask' type='primarytask' id='primarytask' onChange={handleChange}></input></div>
                 {numberOfJobTasks}
-                <button type="button" onClick={handleAddJobTask}>+</button>
+                {numberOfJobTasks.length === 9 ?
+                <button type="button" className='add-job-task' onClick={handleAddJobTask} disabled>Max Job Tasks</button>:
+                <button type="button" className='add-job-task' onClick={handleAddJobTask}>Add Job Task</button>
+
+                }
                 
                 
                 

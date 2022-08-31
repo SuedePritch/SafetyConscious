@@ -52,6 +52,7 @@ h3{
     overflow-y: hidden;
 }
 .job-task-container-grid{
+    height: fit-content;
     grid-template-columns: repeat(3, 1fr);
 
 }
@@ -59,4 +60,10 @@ h3{
 #hazard,
 #control{
     grid-column: span 2;
+}
+.add-job-task{
+    position: absolute;
+    right:0.5rem;
+    top:1rem;
+    padding:0.5rem;
 }

@@ -25,10 +25,9 @@ function JobTask({setJobTaskState}) {
               if(!loading && !error){
                 jobTaskArray.push(data.createJobTask._id)
               }
-              
+
             } catch (error) {
               console.log(error)
-              alert('Submission Failed')
             }
         }else{
           return
@@ -45,10 +44,10 @@ function JobTask({setJobTaskState}) {
 
 
   return (
-    <div className='job-task-container job-task-container-grid' onBlur={handleChangeOnJobTask}>
-      <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" ></input></div>
-      <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' ></input></div>
-      <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' ></input></div>
+    <div className='job-task-container job-task-container-grid'  >
+      <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
+      <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
+      <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
     </div>
   )
 }
