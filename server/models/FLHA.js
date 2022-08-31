@@ -18,8 +18,18 @@ const flhaSchema = new Schema(
             unique:false
         },
         jobTask:[{
-                type: Schema.Types.ObjectId,
-                ref:"JobTask"
+            task:{
+                type:String,
+                required:true
+            },
+            hazard:{
+                type:String,
+                required:true
+            },
+            control:{
+                type:String,
+                required:true
+            }
         }],
         dateCreated:{
             type: Date,
@@ -33,12 +43,6 @@ const flhaSchema = new Schema(
         },
     }
 );
-flhaSchema.virtual("JobTask",{
-    ref:'JobTask',
-    localField:'jobTask',
-    foreignField: '_id',
-
-})
 
 const FLHA = model('FLHA', flhaSchema);
 
