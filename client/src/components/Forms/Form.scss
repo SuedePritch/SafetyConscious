@@ -31,11 +31,6 @@ h3{
 }
 
 // FLHA Styling
-
-.flha-submit{
-    grid-column: 2 / 12;
-    grid-row: 11 / 12;
-}
 .jobLocation{
     grid-column: span 4;
 }
@@ -61,9 +56,16 @@ h3{
 #control{
     grid-column: span 2;
 }
+//FLHA Buttons
+.flha-submit{
+    grid-column: 7 / 12;
+    grid-row: 11 / 12;
+}
 .add-job-task{
-    position: absolute;
-    right:0.5rem;
-    top:1rem;
+    // position: absolute;
+    // right:0.5rem;
+    // bottom:4rem;
+    grid-column: 2 / 7;
+    grid-row: 11 / 12;
     padding:0.5rem;
 }
