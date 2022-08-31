@@ -36,17 +36,16 @@ mutation createJobTask($task: String!, $hazard: String!, $control: String!) {
 `
 
 export const FLHA_FORM_SUBMIT = gql`
-    mutation submitFLHA($jobLocation: String!, $supervisor: String!, $primarytask: String!) {
-    submitFLHA(
-        jobLocation: $jobLocation, 
-        supervisor: $supervisor, 
-        primarytask:$primarytask,
-        jobTask: $jobTask
-        
-        ) {
-    jobLocation
-    supervisor
-    primarytask
-  }
+    mutation submitFLHA($jobLocation: String!, $supervisor: String!, $primarytask: String!, $jobTask: [ID]) {
+    submitFLHA(jobLocation: $jobLocation, supervisor: $supervisor, primarytask: $primarytask, jobTask: $jobTask) {
+        _id
+        jobLocation
+        supervisor
+        primarytask
+        jobTask {
+                _id
+                }
+    dateCreated
+}
 }
 `;
