@@ -23,6 +23,12 @@ const resolvers = {
     allFLHAs: async () => {
       return await FLHA.find().populate("jobTask");
     },
+    allJobTasks: async ()=>{
+      return await FLHA.find({
+        // $where: {dateCreated: Date.now()}
+      }).populate("jobTask");
+      
+    }
 
 
   },

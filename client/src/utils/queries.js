@@ -8,3 +8,20 @@ user {
     }
 }
 `;
+
+export const GET_FLHAS = gql`
+query allFLHAs {
+  allFLHAs {
+    _id
+    jobLocation
+    supervisor
+    primarytask
+    jobTask {
+      _id
+      task
+      hazard
+      control
+    }
+    dateCreated
+  }
+}`

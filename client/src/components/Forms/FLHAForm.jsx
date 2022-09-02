@@ -3,11 +3,20 @@ import { useMutation } from '@apollo/client';
 import { FLHA_FORM_SUBMIT} from '../../utils/mutations'
 
 const jobTaskArray = [];
+
+
+
+
+
 function FLHAForm() {
 const [submitFLHA] = useMutation(FLHA_FORM_SUBMIT);
 const [flhaFormData, setFlhaFormData] = useState();
 
 
+
+//if all fields of a job task are filled 
+//create object and put it into array in index based on job-task-container id
+//removes previous entry as this keeps current values in the array without duplicates
 const handleChangeOnJobTask = async (event)=>{
     if( event.target.parentNode.parentNode.children[0].children[0].value &&
         event.target.parentNode.parentNode.children[1].children[0].value &&
@@ -20,36 +29,7 @@ const handleChangeOnJobTask = async (event)=>{
                 }
             jobTaskArray.splice(jobTaskIndex,1,jobTaskData)
         }
-        
-    
-
 }
-
-
-
-
-
-    const [numberOfJobTasks, setNumberOfJobTasks] = useState([
-        <div className='job-task-container job-task-container-grid' key={0} id="0" >
-            <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
-            <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
-            <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
-        </div>,
-
-        <div className='job-task-container job-task-container-grid'  key={1} id="1">
-            <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
-            <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
-            <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
-        </div>,
-
-        <div className='job-task-container job-task-container-grid'  key={2} id="2">
-            <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
-            <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
-            <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
-        </div>
-    ]);
-
-
 
 
 
@@ -63,30 +43,13 @@ const handleChange = (event) => {
     });
 };
 
-// const createJobTaskHelper = async () =>{
-//     for (let i = 0; i < jobTaskArray.length; i++) {
-//         const jobTaskDataFromArray = jobTaskArray[i];
-//         if(jobTaskDataFromArray){
-//             try {
-//             await createJobTask ({
-//                 variables: { 
-//                     task: jobTaskDataFromArray.task, 
-//                     hazard: jobTaskDataFromArray.hazard, 
-//                     control:jobTaskDataFromArray.control 
-//                 }
-//             });
-//             if(!loading && !error && data){
-//                 jobTaskIdArray.push(data.createJobTask._id)
-//             }
-//         } catch (error) {
-//             console.log(error)
-//         }}
-//     }
-    
-// }
+
+
+
 //This is triggered when the submit button is pressed
 //prevents form clearing
 //calls submitFLHA mutation and grabs the values from the state
+//grabs job tasks from jobsTaskArray created in handleChangeJobTask
 //error message alert if error
 const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -108,7 +71,27 @@ const handleFormSubmit = async (event) => {
 
 
 
+//Default state is 3 job task fields
+//handleAddJobTask will add another div to this array on the add job task button
+const [numberOfJobTasks, setNumberOfJobTasks] = useState([
+    <div className='job-task-container job-task-container-grid' key={0} id="0" >
+        <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
+        <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
+        <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
+    </div>,
 
+    <div className='job-task-container job-task-container-grid'  key={1} id="1">
+        <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
+        <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
+        <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
+    </div>,
+
+    <div className='job-task-container job-task-container-grid'  key={2} id="2">
+        <div className='form-field task'><input placeholder='Task' name='task' type='task' id="task" onChange={handleChangeOnJobTask}></input></div>
+        <div className='form-field hazard'><input placeholder='Hazard' name='hazard' type='hazard' id='hazard' onChange={handleChangeOnJobTask}></input></div>
+        <div className='form-field control'><input placeholder='Controls' name='control' type='control' id='control' onChange={handleChangeOnJobTask}></input></div>
+    </div>
+]);
 
 
 //This adds a new div that contains the fields for a new job task
@@ -123,6 +106,15 @@ const handleAddJobTask = () =>{
     ));
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 return (

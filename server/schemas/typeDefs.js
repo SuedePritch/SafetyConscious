@@ -19,6 +19,7 @@ const typeDefs = gql`
         control:String,
     }
     type JobTask{
+        _id:ID,
         task: String,
         hazard: String,
         control:String,
@@ -42,6 +43,7 @@ const typeDefs = gql`
 type Query{
     user: User
     allFLHAs: [FLHA]
+    allJobTasks: [FLHA]
 }
 type Mutation {
     # USER
