@@ -18,7 +18,7 @@ function NewFlhas() {
             <h2>New FLHAS</h2>
         {flhas.map((flha) => {
             if(Date.now() - flha.dateCreated < 86400000){
-        return    <div className="details" key={flha._id}>
+        return    <div className="main-content" key={flha._id}>
                 <p>{flha.jobLocation}</p>
                 <p>{flha.supervisor}</p>
                 <p>{flha.primarytask}</p>
