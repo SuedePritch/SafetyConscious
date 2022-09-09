@@ -27,11 +27,13 @@ const typeDefs = gql`
     
     type FLHA {
         _id: ID,
+        user: User,
         jobLocation: String,
         supervisor: String,
         primarytask: String,
         jobTask:[JobTask],
-        dateCreated: String
+        dateCreated: String,
+        isApproved: Boolean
     }
     
     
@@ -52,10 +54,13 @@ type Mutation {
 
     #FLHA
     submitFLHA(
+        user: ID,
         jobLocation: String!,
         supervisor: String!, 
         primarytask: String!, 
-        jobTask:[JobTaskInput]): FLHA
+        isApproved: Boolean,
+        jobTask:[JobTaskInput]
+        ): FLHA
 }
 `;
 

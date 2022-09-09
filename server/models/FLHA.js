@@ -2,6 +2,11 @@ const { Schema, model } = require('mongoose');
 
 const flhaSchema = new Schema(
     {
+        user:{
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+            required: true
+        },
         jobLocation: {
             type: String,
             required: true,
@@ -35,6 +40,10 @@ const flhaSchema = new Schema(
             type: Date,
             default: Date.now()
         },
+        isApproved:{
+            type: Boolean,
+            default: false
+        }
     },
     // set this to use virtual below
     {

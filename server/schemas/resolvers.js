@@ -21,33 +21,15 @@ const resolvers = {
     //FLHA
     //all FLHAs
     allFLHAs: async () => {
-      return await FLHA.find().populate("jobTask");
+      return await FLHA.find().populate("user");
     },
     allJobTasks: async ()=>{
-      return await FLHA.find().populate("jobTask");
+      return await FLHA.find().populate("user");
       
     }
 
 
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
