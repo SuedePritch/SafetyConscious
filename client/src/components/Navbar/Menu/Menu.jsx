@@ -25,14 +25,14 @@ function Menu() {
             menuState ? 'Open' : 'Closed'
             }`}>
               <ul className='menu-ul'>
-                  <li><Link to="/company">Company</Link></li>
+                  {/* <li><Link to="/company">Company</Link></li>
                   <li><Link to="/company">Projects</Link></li>
                   <li><Link to="/Employees">Employees</Link></li>
                   <li><Link to="/company">SOPs</Link></li>
                   <li><Link to="/company">Regulations</Link></li>
                   <li><Link to="/company">Inspection Forms</Link></li>
                   <li><Link to="/company">Incident Reporting</Link></li>
-                  <li><Link to="/company">Safety Permits</Link></li>
+                  <li><Link to="/company">Safety Permits</Link></li> */}
                   <li><Link to="/FLHA">FLHA</Link></li>
                   <li><Link to="/newFlhas">New FLHA</Link></li>
               </ul>

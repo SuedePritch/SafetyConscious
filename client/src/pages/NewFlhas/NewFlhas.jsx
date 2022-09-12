@@ -34,7 +34,8 @@ function NewFlhas() {
         <div>
             <Navbar/>
         {flhas.map((flha) => {
-            
+            //FLHAs are created with an isApproved set to false.
+            //This allows another user (saefty guy, supervisor, etc) to be able to review and approve the incomming flhas
             if(!flha.isApproved){
         return <div className="single-flha" key={flha._id}>
                     <div className='flha-details'>
