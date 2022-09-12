@@ -67,6 +67,10 @@ const resolvers = {
       return await FLHA.create(args)
     },
 
+    approveFLHA: async (parent, args) =>{
+      return await FLHA.findOneAndUpdate(args)
+    }
+
     }
 };
 

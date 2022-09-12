@@ -61,6 +61,12 @@ type Mutation {
         isApproved: Boolean,
         jobTask:[JobTaskInput]
         ): FLHA
+
+    #Approve FLHA
+    approveFLHA(
+        _id: ID!,
+        isApproved: Boolean
+    ): FLHA
 }
 `;
 
