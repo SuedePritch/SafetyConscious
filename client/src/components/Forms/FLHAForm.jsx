@@ -1,14 +1,23 @@
 import React,{ useState } from "react";
 import { useMutation } from '@apollo/client';
 import { FLHA_FORM_SUBMIT} from '../../utils/mutations'
+import jwtdecode from 'jwt-decode';
 
 const jobTaskArray = [];
+let userId;
 
 
 
 
 
 function FLHAForm() {
+    let token = localStorage.getItem('id_token')
+    if(token){
+        userId = jwtdecode(token).data._id
+    }else{
+        alert('You Need to Login First')
+    }
+
 const [submitFLHA] = useMutation(FLHA_FORM_SUBMIT);
 const [flhaFormData, setFlhaFormData] = useState();
 
@@ -59,7 +68,8 @@ const handleFormSubmit = async (event) => {
             jobLocation: flhaFormData.jobLocation,
             supervisor: flhaFormData.supervisor,
             primarytask: flhaFormData.primarytask,
-            jobTask: jobTaskArray
+            jobTask: jobTaskArray,
+            user: userId
         },
     });
     } catch (e) {

@@ -11,7 +11,7 @@ function NewFlhas() {
     if (error) return `Error! ${error.message}`;
     if(!loading && !error){
     flhas = data.allFLHAs
-    }
+    }console.log(flhas)
     return(
         <div>
             <Navbar/>
@@ -20,6 +20,7 @@ function NewFlhas() {
             if(Date.now() - flha.dateCreated < 86400000){
         return <div className="single-flha" key={flha._id}>
                     <div className='flha-details'>
+                        {flha.user.email}
                         <p>Location: {flha.jobLocation}</p>
                         <p>Supervisor: {flha.supervisor}</p>
                         <p>Job Task: {flha.primarytask}</p>

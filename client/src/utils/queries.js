@@ -16,6 +16,10 @@ query allFLHAs {
     jobLocation
     supervisor
     primarytask
+    user {
+      username
+      email
+    }
     jobTask {
       _id
       task
@@ -23,5 +27,6 @@ query allFLHAs {
       control
     }
     dateCreated
+    isApproved
   }
 }`
