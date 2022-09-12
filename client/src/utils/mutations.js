@@ -36,22 +36,8 @@ mutation createJobTask($task: String!, $hazard: String!, $control: String!) {
 `
 
 export const FLHA_FORM_SUBMIT = gql`
-    mutation submitFLHA(
-        $jobLocation: String!, 
-        $supervisor: String!, 
-        $primarytask: String!, 
-        $user: ID, 
-        $isApproved: Boolean, 
-        $jobTask: [JobTaskInput]
-        ) {
-    submitFLHA(
-        jobLocation: $jobLocation, 
-        supervisor: $supervisor, 
-        primarytask: $primarytask, 
-        user: $user, 
-        isApproved: $isApproved, 
-        jobTask: $jobTask
-        ) {
+    mutation submitFLHA($jobLocation: String!, $supervisor: String!, $primarytask: String!, $user: ID, $isApproved: Boolean, $jobTask: [JobTaskInput]) {
+    submitFLHA(jobLocation: $jobLocation, supervisor: $supervisor, primarytask: $primarytask, user: $user, isApproved: $isApproved, jobTask: $jobTask) {
     _id
     user {
         username
@@ -67,7 +53,15 @@ export const FLHA_FORM_SUBMIT = gql`
     }
     dateCreated
     isApproved
-  }
+    }
+}
+`
+export const APPROVE_FLHA = gql`
+mutation approveFLHA($id: ID!, $isApproved: Boolean) {
+    approveFLHA(_id: $id, isApproved: $isApproved) {
+        isApproved
+        dateCreated
+    }
 }
 
 `;

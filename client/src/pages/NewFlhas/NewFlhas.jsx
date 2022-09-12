@@ -1,12 +1,22 @@
 import React from 'react'
 import './NewFlhas.scss'
-import { useQuery} from '@apollo/client';
+import { useQuery, useMutation} from '@apollo/client';
 import {GET_FLHAS} from '../../utils/queries';
+import { APPROVE_FLHA } from '../../utils/mutations';
 
 import Navbar from '../../components/Navbar/Navbar';
 function NewFlhas() {
-    const handleApproveFLHA = () =>{
-        console.log('This Flha Has Been Approved')
+    const [approve] = useMutation(APPROVE_FLHA)
+    const handleApproveFLHA = async (event) =>{
+        event.preventDefault()
+        const flhaID = event.target.dataset.flhaid
+        try{
+            await approve({
+                variables: {id: flhaID , isApproved: true}
+            })
+        }catch(e){
+            alert('Approve Failed')
+        }
     }
 
 
@@ -34,7 +44,7 @@ function NewFlhas() {
                     </div>
                         <div className='flha-buttons'>
                             <button>Edit</button>
-                            <button onClick={handleApproveFLHA}>Good</button>
+                            <button data-flhaid={flha._id} onClick={handleApproveFLHA}>Good</button>
                         </div>
                     {flha.jobTask.map((task)=>{
                     
