@@ -7,9 +7,10 @@ import { APPROVE_FLHA } from '../../utils/mutations';
 import Navbar from '../../components/Navbar/Navbar';
 function NewFlhas() {
     const [approve] = useMutation(APPROVE_FLHA)
+    let flhaID;
     const handleApproveFLHA = async (event) =>{
-        event.preventDefault()
-        const flhaID = event.target.dataset.flhaid
+        // event.preventDefault()
+        flhaID = event.target.dataset.flhaid
         try{
             await approve({
                 variables: {id: flhaID , isApproved: true}

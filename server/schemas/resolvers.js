@@ -66,9 +66,9 @@ const resolvers = {
     submitFLHA: async ( parent, args) => {
       return await FLHA.create(args)
     },
-
-    approveFLHA: async (parent, args) =>{
-      return await FLHA.findOneAndUpdate(args)
+    
+    approveFLHA: async (parent, {_id, isApproved}) =>{
+      return await FLHA.findByIdAndUpdate(_id, { $set: { isApproved: isApproved}}, {new: true})
     }
 
     }
