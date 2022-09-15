@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './NewFlhas.scss'
 import { useQuery, useMutation} from '@apollo/client';
 import {GET_FLHAS} from '../../utils/queries';
@@ -7,9 +7,9 @@ import { APPROVE_FLHA } from '../../utils/mutations';
 import Navbar from '../../components/Navbar/Navbar';
 function NewFlhas() {
     const [approve] = useMutation(APPROVE_FLHA)
+
     let flhaID;
     const handleApproveFLHA = async (event) =>{
-        // event.preventDefault()
         flhaID = event.target.dataset.flhaid
         try{
             await approve({
@@ -22,9 +22,8 @@ function NewFlhas() {
 
 
 
-
     let flhas;
-    const { loading, error, data } = useQuery(GET_FLHAS);
+    const { loading, error, data } = useQuery(GET_FLHAS, {pollInterval: 500});
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     if(!loading && !error){
@@ -35,7 +34,7 @@ function NewFlhas() {
             <Navbar/>
         {flhas.map((flha) => {
             //FLHAs are created with an isApproved set to false.
-            //This allows another user (saefty guy, supervisor, etc) to be able to review and approve the incomming flhas
+            //This allows another user (safety guy, supervisor, etc) to be able to review and approve the incoming flhas
             if(!flha.isApproved){
         return <div className="single-flha" key={flha._id}>
                     <div className='flha-details'>
