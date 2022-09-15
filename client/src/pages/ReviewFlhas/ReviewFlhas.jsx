@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import './NewFlhas.scss'
+import React from 'react'
+import './ReviewFlhas.scss'
 import { useQuery, useMutation} from '@apollo/client';
 import {GET_FLHAS} from '../../utils/queries';
 import { APPROVE_FLHA } from '../../utils/mutations';
 
 import Navbar from '../../components/Navbar/Navbar';
-function NewFlhas() {
+function ReviewFlhas() {
     const [approve] = useMutation(APPROVE_FLHA)
 
     let flhaID;
@@ -63,4 +63,4 @@ function NewFlhas() {
     )
 }
 
-export default NewFlhas
+export default ReviewFlhas

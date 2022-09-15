@@ -11,8 +11,8 @@ import './App.css'
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import Main from './pages/Main/Main';
-import FLHA from './pages/FLHA/FLHA';
-import NewFlhas from './pages/NewFlhas/NewFlhas';
+import NewFlha from './pages/NewFlha/NewFlha';
+import ReviewFlhas from './pages/ReviewFlhas/ReviewFlhas';
 
 
 // APOLLO CONFIG
@@ -38,8 +38,8 @@ function App() {
           <Route path='/' element={<Main />} />
 
           {/* Main directory */}
-          <Route path='/FLHA' element={<FLHA />} />
-          <Route path='/newFlhas' element={<NewFlhas />} />
+          <Route path='/newFlha' element={<NewFlha />} />
+          <Route path='/reviewFlhas' element={<ReviewFlhas />} />
 
           {/* Wildcard/404 Routes - Needs to stay at the bottom */}
           <Route path='*'element={<h1 className='display-2'>Wrong page!</h1>}/>
