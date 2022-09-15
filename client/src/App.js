@@ -11,6 +11,7 @@ import './App.css'
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
 import Main from './pages/Main/Main';
+import ApprovedFlhas from './pages/ApprovedFlhas/ApprovedFlhas'
 import NewFlha from './pages/NewFlha/NewFlha';
 import ReviewFlhas from './pages/ReviewFlhas/ReviewFlhas';
 
@@ -38,6 +39,7 @@ function App() {
           <Route path='/' element={<Main />} />
 
           {/* Main directory */}
+          <Route path='/approvedFlhas' element={<ApprovedFlhas />} />
           <Route path='/newFlha' element={<NewFlha />} />
           <Route path='/reviewFlhas' element={<ReviewFlhas />} />
 

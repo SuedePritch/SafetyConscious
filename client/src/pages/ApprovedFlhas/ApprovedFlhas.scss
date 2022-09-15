@@ -1,0 +1,26 @@
+.single-flha-approved{
+    position: relative;
+    margin:1rem;
+    padding:0.5rem;
+    text-align: left;
+    background: var(--clr-accent-500);
+    box-shadow: 0 0 20px 1px black;
+}
+.flha-details-approved{
+    grid-column: span 3;
+
+    p{
+        font-weight: 700;
+        margin:0.5rem;
+    }
+}
+.user-approved{
+    position: absolute;
+    bottom:0.5rem;
+    right:0.5rem;
+}
+.date-created-approved{
+    position: absolute;
+    top:0.5rem;
+    right:0.5rem;
+}
