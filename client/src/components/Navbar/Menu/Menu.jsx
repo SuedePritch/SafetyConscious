@@ -34,9 +34,9 @@ function Menu() {
                   <li><Link to="/company">Incident Reporting</Link></li>
                   <li><Link to="/company">Safety Permits</Link></li> */}
 
-                  <li><Link to="/approvedFlhas">Approved Flha</Link></li>
+                  <li><Link to="/approvedFlhas">Approved Flhas</Link></li>
                   <li><Link to="/newFlha">New Flha</Link></li>
-                  <li><Link to="/reviewFlhas">Review FLHA</Link></li>
+                  <li><Link to="/reviewFlhas">Review Flhas</Link></li>
               </ul>
           </div>
 

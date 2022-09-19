@@ -18,22 +18,23 @@ function ApprovedFlhas() {
     return(
         <div>
             <Navbar/>
-        {flhas.map((flha) => {
-        return <div className="single-flha-approved" key={flha._id}>
-                    <div className='flha-details-approved'>
-                        <p className='user-approved'><u>{flha.user.username}</u></p>
-                        <p>Location: {flha.jobLocation}</p>
-                        <p>Supervisor: {flha.supervisor}</p>
-                        <p>Job Task: {flha.primarytask}</p>
-                        <p className='date-created-approved'>Date Created: {new Intl.DateTimeFormat("en-GB", {
-                                        year: "numeric",
-                                        month: "short",
-                                        day: "2-digit"
-                                    }).format(flha.dateCreated)}</p>
-                    </div>
-            </div>
-
-        })} 
+        <div className="approved-flha-container">
+            {flhas.map((flha) => {
+            return <div className="single-flha-approved" key={flha._id}>
+                        <div className='flha-details-approved'>
+                            <p className='user-approved'>{flha.user.username}</p>
+                            <p>{flha.supervisor}</p>
+                            <p>{flha.jobLocation}</p>
+                            {/* <p>{flha.primarytask}</p> */}
+                            <p className='date-created-approved'>{new Intl.DateTimeFormat("en-GB", {
+                                year:"2-digit",
+                                month: "short",
+                                day: "2-digit"
+                                }).format(flha.dateCreated)}</p>
+                        </div>
+                </div>
+            })}
+        </div>
         </div>
   )
 }

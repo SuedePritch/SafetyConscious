@@ -1,15 +1,18 @@
+.approved-flha-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 .single-flha-approved{
     position: relative;
-    margin:1rem;
+    margin:0.5rem;
     padding:0.5rem;
     text-align: left;
     background: var(--clr-accent-500);
     box-shadow: 0 0 20px 1px black;
 }
 .flha-details-approved{
-    grid-column: span 3;
-
     p{
+        font-size:0.75em;
         font-weight: 700;
         margin:0.5rem;
     }
