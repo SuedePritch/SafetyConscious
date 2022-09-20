@@ -9,6 +9,15 @@ user {
 }
 `;
 
+export const GET_COMPANIES = gql`
+query companies{
+  companies{
+    _id 
+    company
+  }
+}
+`
+
 export const GET_FLHAS = gql`
 query allFLHAs {
   allFLHAs {
