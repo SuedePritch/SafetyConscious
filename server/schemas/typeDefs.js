@@ -14,6 +14,11 @@ const typeDefs = gql`
         user: User
     }
 
+    type Company{
+        _id: ID 
+        company: String
+    }
+
 
     input JobTaskInput{
         task: String,
@@ -46,6 +51,7 @@ const typeDefs = gql`
 
 type Query{
     user: User
+    companies: [Company]
     allFLHAs: [FLHA]
     allJobTasks: [FLHA]
 }
@@ -53,6 +59,8 @@ type Mutation {
     # USER
     addUser(username: String!, firstname:String!, lastname:String, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    #Company
+    addCompany(company:String!):Company
 
     #FLHA
     submitFLHA(

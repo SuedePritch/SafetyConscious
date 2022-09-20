@@ -1,4 +1,4 @@
-const { User, FLHA} = require('../models');
+const { User, FLHA, Company} = require('../models');
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -16,6 +16,10 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in! resolvers');
   
+    },
+    // Company
+    companies: async () =>{
+      return await Company.find()
     },
 
     //FLHA
@@ -60,7 +64,12 @@ const resolvers = {
       return { token, user };
     },
 
-
+       // Company
+      addCompany: async (parent, args) =>{
+        return await Company.create(args)
+  
+      },
+  
 
     //FLHA
     submitFLHA: async ( parent, args) => {

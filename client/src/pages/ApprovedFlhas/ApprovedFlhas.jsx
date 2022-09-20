@@ -25,7 +25,6 @@ function ApprovedFlhas() {
                             <p className='user-approved'>{flha.user.username}</p>
                             <p>{flha.supervisor}</p>
                             <p>{flha.jobLocation}</p>
-                            {/* <p>{flha.primarytask}</p> */}
                             <p className='date-created-approved'>{new Intl.DateTimeFormat("en-GB", {
                                 year:"2-digit",
                                 month: "short",
