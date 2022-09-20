@@ -14,15 +14,18 @@ export const LOGIN_USER = gql`
 `
 
 export const ADD_USER = gql`
-    mutation addUser($username: String!, $email: String!, $password: String!) {
-        addUser(username: $username, email: $email, password: $password) {
-            token
-            user {
-                _id
-                username
-            }
-        }
+    mutation addUser($username: String!, $firstname: String!, $email: String!, $password: String!, $lastname: String) {
+  addUser(username: $username, firstname: $firstname, email: $email, password: $password, lastname: $lastname) {
+    token
+    user {
+      _id
+      username
+      firstname
+      lastname
+      email
     }
+  }
+}
 `
 export const CREATE_JOB_TASK = gql`
 mutation createJobTask($task: String!, $hazard: String!, $control: String!) {

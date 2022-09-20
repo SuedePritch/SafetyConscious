@@ -13,7 +13,13 @@ function SignUpForm() {
         event.preventDefault();
         try {
             const userMutationResponse = await addUser ({
-                variables: { username: signupFormData.username, email: signupFormData.email, password: signupFormData.password},
+                variables: { 
+                    username: signupFormData.username, 
+                    email: signupFormData.email, 
+                    firstname: signupFormData.firstname,
+                    lastname: signupFormData.lastname,
+                    password: signupFormData.password
+                },
             });
             const token = userMutationResponse.data.addUser.token;
             Auth.login(token);
@@ -38,6 +44,14 @@ return (
                 </div>
                 <div className='form-field signup'>
                     <input placeholder='Email' name= 'email' type='email' id='email' 
+                        onChange={handleChange}></input>
+                </div>
+                <div className='form-field signup'>
+                    <input placeholder='First Name' name= 'firstname' type='firstname' id='firstname' 
+                        onChange={handleChange}></input>
+                </div>
+                <div className='form-field signup'>
+                    <input placeholder='Last Name' name= 'lastname' type='lastname' id='lastname' 
                         onChange={handleChange}></input>
                 </div>
                 <div className='form-field signup'>
