@@ -28,6 +28,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    company:{
+      type:Schema.Types.ObjectId,
+      ref:"Company",
+      required:true
+    }
   },
   // set this to use virtual below
   {
