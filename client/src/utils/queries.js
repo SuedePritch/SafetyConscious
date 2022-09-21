@@ -3,7 +3,8 @@ import { gql } from '@apollo/client';
 export const GET_ME = gql`
 query user {
 user {
-    username
+    firstname
+    lastname
     email
     }
 }
@@ -26,7 +27,8 @@ query allFLHAs {
     supervisor
     primarytask
     user {
-      username
+      firstname
+      lastname
       email
     }
     jobTask {

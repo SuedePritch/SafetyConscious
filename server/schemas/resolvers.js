@@ -14,7 +14,7 @@ const resolvers = {
           _id: context.user._id 
           });
       }
-      throw new AuthenticationError('You need to be logged in! resolvers');
+      throw new AuthenticationError('You need to be logged in!');
   
     },
     // Company

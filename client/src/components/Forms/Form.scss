@@ -11,7 +11,8 @@ h3{
 .form-field > *{
     width: 100%;
 }
-.form-field input{
+.form-field input,
+.form-field select{
     padding: 0.5rem;
 }
 .form-field-button{

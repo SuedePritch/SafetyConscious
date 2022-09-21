@@ -23,7 +23,6 @@ function SignUpForm() {
         try {
             const userMutationResponse = await addUser ({
                 variables: { 
-                    username: signupFormData.username, 
                     email: signupFormData.email, 
                     firstname: signupFormData.firstname,
                     lastname: signupFormData.lastname,
@@ -35,7 +34,7 @@ function SignUpForm() {
             Auth.login(token);
         } catch (e) {
         console.log(e)
-            alert('Email or Username already taken')
+            alert('Email already in use')
         }
     };
     const handleChange = (event) => {
@@ -51,10 +50,6 @@ function SignUpForm() {
 return (
     <div className='main-content'>
         <form className='form' onSubmit={handleFormSubmit}>
-                <div className='form-field signup'>
-                    <input placeholder='Username' name= 'username' type='username' id='username' 
-                        onChange={handleChange}></input>
-                </div>
                 <div className='form-field signup'>
                     <input placeholder='Email' name= 'email' type='email' id='email' 
                         onChange={handleChange}></input>

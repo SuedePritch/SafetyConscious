@@ -62,6 +62,7 @@ const handleChange = (event) => {
 //error message alert if error
 const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(jobTaskArray);
     try {
     await submitFLHA ({
         variables: { 

@@ -5,7 +5,8 @@ export const LOGIN_USER = gql`
     login(email: $email, password: $password) {
         token
         user {
-            username
+            firstname
+            lastname
             password
             email
         }
@@ -14,18 +15,18 @@ export const LOGIN_USER = gql`
 `
 
 export const ADD_USER = gql`
-    mutation addUser($username: String!, $firstname: String!, $email: String!, $password: String!, $lastname: String, $company:ID!) {
-  addUser(username: $username, firstname: $firstname, email: $email, password: $password, lastname: $lastname, company: $company) {
+    mutation addUser($firstname: String!, $email: String!, $password: String!, $lastname: String, $company: ID!) {
+  addUser(firstname: $firstname, email: $email, password: $password, lastname: $lastname, company: $company) {
     token
     user {
       _id
-      username
       firstname
       lastname
-      company{
+      email
+      password
+      company {
         company
       }
-      email
     }
   }
 }
@@ -46,7 +47,8 @@ export const FLHA_FORM_SUBMIT = gql`
     submitFLHA(jobLocation: $jobLocation, supervisor: $supervisor, primarytask: $primarytask, user: $user, isApproved: $isApproved, jobTask: $jobTask) {
     _id
     user {
-        username
+        firstname
+        lastname
         email
     }
     jobLocation
