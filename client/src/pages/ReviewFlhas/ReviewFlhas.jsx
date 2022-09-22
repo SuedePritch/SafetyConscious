@@ -38,7 +38,7 @@ function ReviewFlhas() {
             if(!flha.isApproved){
         return <div className="single-flha" key={flha._id}>
                     <div className='flha-details'>
-                        <p><u>{flha.user.username}</u></p>
+                        <p><u>{flha.user.firstname} {flha.user.lastname}</u></p>
                         <p>Location: {flha.jobLocation}</p>
                         <p>Supervisor: {flha.supervisor}</p>
                         <p>Job Task: {flha.primarytask}</p>

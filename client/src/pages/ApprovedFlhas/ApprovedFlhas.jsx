@@ -22,7 +22,7 @@ function ApprovedFlhas() {
             {flhas.map((flha) => {
             return <div className="single-flha-approved" key={flha._id}>
                         <div className='flha-details-approved'>
-                            <p className='user-approved'>{flha.user.username}</p>
+                            <p className='user-approved'>{flha.user.firstname} {flha.user.lastname}</p>
                             <p>{flha.supervisor}</p>
                             <p>{flha.jobLocation}</p>
                             <p className='date-created-approved'>{new Intl.DateTimeFormat("en-GB", {
