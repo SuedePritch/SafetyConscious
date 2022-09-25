@@ -27,13 +27,13 @@ function Menu() {
               <ul className='menu-ul'>
                   {/* <li><Link to="/company">Company</Link></li>
                   <li><Link to="/company">Projects</Link></li>
-                  <li><Link to="/Employees">Employees</Link></li>
                   <li><Link to="/company">SOPs</Link></li>
                   <li><Link to="/company">Regulations</Link></li>
                   <li><Link to="/company">Inspection Forms</Link></li>
                   <li><Link to="/company">Incident Reporting</Link></li>
-                  <li><Link to="/company">Safety Permits</Link></li> */}
+                <li><Link to="/company">Safety Permits</Link></li> */}
 
+                  <li><Link to="/employees">Employees</Link></li>
                   <li><Link to="/approvedFlhas">Approved Flhas</Link></li>
                   <li><Link to="/newFlha">New Flha</Link></li>
                   <li><Link to="/reviewFlhas">Review Flhas</Link></li>

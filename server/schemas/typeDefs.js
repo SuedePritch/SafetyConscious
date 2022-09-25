@@ -54,6 +54,7 @@ type Query{
     companies: [Company]
     allFLHAs: [FLHA]
     allJobTasks: [FLHA]
+    employees:[User]
 }
 type Mutation {
     # USER

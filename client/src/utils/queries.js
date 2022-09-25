@@ -18,6 +18,15 @@ query companies{
   }
 }
 `
+export const GET_EMPLOYEES = gql`
+query employees{
+  employees{
+    _id
+    firstname
+    lastname
+  }
+}
+`
 
 export const GET_FLHAS = gql`
 query allFLHAs {

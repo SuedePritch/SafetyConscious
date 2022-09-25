@@ -21,6 +21,12 @@ const resolvers = {
     companies: async () =>{
       return await Company.find()
     },
+    //Emplyees
+    employees: async (parent, {company}, context) =>{
+      return await User.find({
+        company: context.user.company
+      });
+    },
 
     //FLHA
     //all FLHAs
