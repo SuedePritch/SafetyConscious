@@ -21,7 +21,7 @@ const resolvers = {
     companies: async () =>{
       return await Company.find()
     },
-    //Emplyees
+    //Empolyees
     employees: async (parent, {company}, context) =>{
       return await User.find({
         company: context.user.company
@@ -73,7 +73,13 @@ const resolvers = {
        // Company
       addCompany: async (parent, args) =>{
         return await Company.create(args)
-  
+      },
+
+      //Safety Ticket
+      addSafetyTicket: async (parent, {user, safetyticket}) => {
+        return await User.findByIdAndUpdate(
+          user, { $push: { safetytickets: safetyticket}}, {new: true}
+        )
       },
   
 

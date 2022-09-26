@@ -1,6 +1,15 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+    input SafetyTicketInput{
+        ticket:String
+        expirationDate: String
+    } 
+    type SafetyTicket {
+        _id: ID
+        ticket: String
+        expirationDate: String
+    } 
     type User {
     _id: ID
     firstname:String
@@ -8,6 +17,7 @@ const typeDefs = gql`
     email: String
     password: String
     company: Company
+    safetytickets: [SafetyTicket]
     }
     type Auth {
         token: ID!
@@ -62,7 +72,11 @@ type Mutation {
     login(email: String!, password: String!): Auth
     #Company
     addCompany(company:String!):Company
-
+    #Safety Tickets
+    addSafetyTicket(
+        user:ID,
+        safetyticket:[SafetyTicketInput] 
+    ): User
     #FLHA
     submitFLHA(
         user: ID,

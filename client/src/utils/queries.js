@@ -24,6 +24,16 @@ query employees{
     _id
     firstname
     lastname
+    email
+    password
+    safetytickets {
+      ticket
+      expirationDate
+    }
+    company {
+      _id
+      company
+    }
   }
 }
 `

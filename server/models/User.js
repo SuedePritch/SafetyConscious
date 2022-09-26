@@ -27,7 +27,18 @@ const userSchema = new Schema(
       type:Schema.Types.ObjectId,
       ref:"Company",
       required:true
-    }
+    },
+    safetytickets:[{
+      ticket:{
+        type:String,
+        required:true
+      },
+      expirationDate:{
+        type: Date,
+        required: true
+      }
+
+    }]
   },
   // set this to use virtual below
   {
