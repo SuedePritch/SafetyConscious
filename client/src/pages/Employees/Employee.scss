@@ -1,0 +1,28 @@
+.employee-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:0.5rem;
+    padding:1rem;
+}
+h3{
+    padding:0;
+    margin:0;
+}
+.employee{
+    padding:1rem;
+    box-shadow: 0 0 20px 1px black;
+}
+.ticket{
+    border:1px solid black;
+    margin:0.25rem 0 ;
+    padding:0.25rem;
+}
+.current{
+    background-color: hsla(120, 61%, 50%, 0.6);
+}
+.warning{
+    background-color: hsla(60, 100%, 50%, 0.6);
+}
+.expired{
+    background-color: hsla(0, 100%, 50%, 0.6);
+}

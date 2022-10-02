@@ -50,6 +50,7 @@ const handleFormSubmit = async (event) => {
     <div className='main-content'>
         <form className="form">
             <div className='form-field addticket'>
+                <label htmlFor="employee">Employee Name</label>
                 <select name='employee' type='employee' id='employee' onChange={handleChange}>
                         <option value="null">Select Employee</option>
                         {employees.map((employee)=>{return <option key={employee._id} value={employee._id}>{employee.firstname} {employee.lastname}</option>})}
@@ -58,6 +59,7 @@ const handleFormSubmit = async (event) => {
 
             {/* TODO: Would like to have it be autocomplete with only acceptable safety ticket names example Ground disturbance level 2, First aid level C*/}
             <div className='form-field addticket'>
+                <label htmlFor="ticket">Safety Ticket Name</label>
                 <input type="text" placeholder='Type of Safety Ticket' name="ticket" onChange={handleChange}/>
             </div>
             <div className='form-field addticket'>
