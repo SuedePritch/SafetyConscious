@@ -71,5 +71,23 @@ mutation approveFLHA($id: ID!, $isApproved: Boolean) {
         dateCreated
     }
 }
-
-`;
+`
+export const ADD_SAFETY_TICKET = gql`
+mutation Mutation($user: ID, $safetyticket: [SafetyTicketInput]) {
+  addSafetyTicket(user: $user, safetyticket: $safetyticket) {
+    _id
+    firstname
+    lastname
+    email
+    password
+    company {
+      _id
+      company
+    }
+    safetytickets {
+      _id
+      ticket
+      expirationDate
+    }
+  }
+}`;
