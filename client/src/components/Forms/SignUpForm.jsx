@@ -1,5 +1,5 @@
-import { useMutation, useQuery } from '@apollo/client';
 import React, { useState } from 'react';
+import { useMutation, useQuery } from '@apollo/client';
 import { GET_COMPANIES } from '../../utils/queries';
 import { ADD_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth.js';

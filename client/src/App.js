@@ -15,6 +15,7 @@ import Employee from './pages/Employees/Employee';
 import ApprovedFlhas from './pages/ApprovedFlhas/ApprovedFlhas'
 import NewFlha from './pages/NewFlha/NewFlha';
 import ReviewFlhas from './pages/ReviewFlhas/ReviewFlhas';
+import AddSafetyTicket from './pages/AddSafetyTicket/AddSafetyTicket';
 
 
 // APOLLO CONFIG
@@ -41,6 +42,7 @@ function App() {
 
           {/* Main directory */}
 
+          <Route path='/addsafetyticket' element={<AddSafetyTicket />} />
           <Route path='/employees' element={<Employee />} />
           <Route path='/approvedFlhas' element={<ApprovedFlhas />} />
           <Route path='/newFlha' element={<NewFlha />} />

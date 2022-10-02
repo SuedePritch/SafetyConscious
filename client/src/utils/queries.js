@@ -27,6 +27,7 @@ query employees{
     email
     password
     safetytickets {
+      _id
       ticket
       expirationDate
     }

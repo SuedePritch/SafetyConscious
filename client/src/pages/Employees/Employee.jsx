@@ -25,16 +25,20 @@ return (
                 return <div key={employee._id}>
                             <div>
                                 <p>{employee.firstname} {employee.lastname}</p>
-                                {employee.safetytickets.map((safetyticket)=>{
-                                    return <div>
-                                        <p>{safetyticket.ticket}</p>
-                                        <p>{new Intl.DateTimeFormat("en-GB", {
-                                year:"2-digit",
-                                month: "short",
-                                day: "2-digit"
-                                }).format(safetyticket.expirationDate)}</p>
-                                    </div>
-                                })}
+                                {employee.safetytickets.length > 0 ? 
+                                employee.safetytickets.map((safetyticket)=>{
+                                    return <div key={safetyticket._id}>
+                                                <p>{safetyticket.ticket}</p>
+                                                <p>{new Intl.DateTimeFormat("en-GB", {
+                                                        year:"2-digit",
+                                                        month: "short",
+                                                        day: "2-digit"
+                                                        }).format(safetyticket.expirationDate)}</p>
+                                            </div>
+                                }
+                                )
+                                : 
+                                <br />}
                             </div>
                     </div>
                 })}
