@@ -35,7 +35,11 @@ const resolvers = {
     },
     allJobTasks: async ()=>{
       return await FLHA.find().populate("user");
-      
+    },
+    flhasByUser:async (parent, {company}, context) => {
+      return FLHA.find({
+        company: context.user.company
+      }).populate("user").sort("user");
     }
 
 

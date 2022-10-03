@@ -61,3 +61,14 @@ query allFLHAs {
     isApproved
   }
 }`
+
+export const FLHA_BY_USER= gql`{
+  query flhasByUser {
+  flhasByUser {
+    user {
+      _id
+    }
+    dateCreated
+  }
+}
+}`

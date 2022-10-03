@@ -62,6 +62,7 @@ const typeDefs = gql`
 type Query{
     user: User
     companies: [Company]
+    flhasByUser: [FLHA]
     allFLHAs: [FLHA]
     allJobTasks: [FLHA]
     employees:[User]

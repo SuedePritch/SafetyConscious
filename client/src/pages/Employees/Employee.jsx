@@ -18,14 +18,13 @@ function Employee() {
     if (error) return `Error! ${error.message}`;
     if(!loading && !error){
     employees = data.employees
-    console.log(Date.now + warningTime)
     }
 
 
 return (
     <div>
         <Navbar/>
-        <div className='employee-container main-content'>
+        <div className='employee-container'>
                 {employees.map((employee) => {
                 return <div className='employee' key={employee._id}>
                             <div>

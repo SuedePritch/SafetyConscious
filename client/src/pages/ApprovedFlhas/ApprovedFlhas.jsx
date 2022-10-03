@@ -19,7 +19,8 @@ function ApprovedFlhas() {
         <div>
             <Navbar/>
         <div className="approved-flha-container">
-            {flhas.map((flha) => {
+            {flhas.map((flha) => { 
+                if(flha.isApproved){
             return <div className="single-flha-approved" key={flha._id}>
                         <div className='flha-details-approved'>
                             <p className='user-approved'>{flha.user.firstname} {flha.user.lastname}</p>
@@ -32,6 +33,7 @@ function ApprovedFlhas() {
                                 }).format(flha.dateCreated)}</p>
                         </div>
                 </div>
+            }else{return <div key={Math.random()}></div>}
             })}
         </div>
         </div>
