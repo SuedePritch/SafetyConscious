@@ -62,7 +62,7 @@ query allFLHAs {
   }
 }`
 
-export const FLHA_BY_USER= gql`{
+export const FLHA_BY_USER= gql`
   query flhasByUser {
   flhasByUser {
     user {
@@ -70,5 +70,4 @@ export const FLHA_BY_USER= gql`{
     }
     dateCreated
   }
-}
 }`

@@ -26,3 +26,9 @@ h3{
 .expired{
     background-color: hsla(0, 100%, 50%, 0.5);
 }
+.missing{
+    border: 3px solid hsla(15, 100%, 50%, 0.8);
+}
+.complete{
+    border: 3px solid hsla(120, 60%, 50%, 0.8);
+}
