@@ -23,6 +23,21 @@ app.use(express.json());
 // if (process.env.NODE_ENV === 'production') {
 //   app.use(express.static(path.join(__dirname, '../client/build')));
 // }
+app.post('/api/messages', (req, res) => {
+
+  res.header('Content-Type', 'application/json');
+// Download the helper library from https://www.twilio.com/docs/node/install
+// Find your Account SID and Auth Token in Account Info
+// and set the environment variables. See http://twil.io/secure
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+client.messages 
+    .create(req.body
+      // {body: 'Hi there', from: '+18704937503', to: '+12506170145'}
+      )
+    .then(message => console.log(message.sid));
+})
 
 
 const startApolloServer = async (typeDefs, resolvers) => {
