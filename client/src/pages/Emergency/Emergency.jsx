@@ -2,7 +2,7 @@ import React from 'react'
 
 function Emergency() {
     const messagesdetails = {
-        body: 'Hi there', 
+        body: 'An EMERGENCY has been reported by RFI INDUSTRIES at the THUNDER BAY location. If you are ABLE to respond reply 1, if you are UNABLE to respond reply 2. Please log into Safety Conscious to view updates on the situation. ', 
         from: '+18704937503', 
         to: '+12506170145'
     }
@@ -16,24 +16,7 @@ function Emergency() {
             },
             body: JSON.stringify(messagesdetails)
         })
-            .then(res => res.json())
-            .then(data => {
-            // if (data.success) {
-            //     this.setState({
-            //     error: false,
-            //     submitting: false,
-            //     message: {
-            //         to: '',
-            //         body: ''
-            //     }
-            //     });
-            // } else {
-            //     this.setState({
-            //     error: true,
-            //     submitting: false
-            //     });
-            // }
-            });
+            .then(res => res.json());
         }
 return (
     <div>

@@ -9,6 +9,16 @@ require('dotenv').config()
 
 const app = express();
 const PORT = process.env.PORT || 3002;
+
+
+let url;
+if(process.env.ENVIRONMENT = 'development'){
+  url = process.env.DEVELOPMENT_URL
+}else if(process.env.ENVIROMENT = 'production'){
+  url = process.env.PRODUCTION_URL
+}
+
+
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -18,13 +28,13 @@ const server = new ApolloServer({
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors())
-// app.get('/', (req, res) => {  res.sendFile(path.join(__dirname, '../client/build/index.html'));});
-// app.get('/*', (req, res) => {  res.sendFile(path.join(__dirname, '../client/build/index.html'));})
 
 // if we're in production, serve client/build as static assets
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '../client/build')));
-// }
+if (process.env.ENVIRONMENT === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.get('/', (req, res) => {  res.sendFile(path.join(__dirname, '../client/build/index.html'));});
+  app.get('/*', (req, res) => {  res.sendFile(path.join(__dirname, '../client/build/index.html'));})
+}
 app.post('/api/messages', (req, res) => {
 
   res.header('Content-Type', 'application/json');
@@ -49,7 +59,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
   db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+      console.log(`Use GraphQL at ${url}${server.graphqlPath}`);
     })
   })
   };
