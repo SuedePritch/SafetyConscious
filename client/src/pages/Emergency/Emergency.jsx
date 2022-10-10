@@ -1,26 +1,44 @@
 import React from 'react'
+import Navbar from '../../components/Navbar/Navbar'
 
 function Emergency() {
-    const messagesdetails = {
-        body: 'An EMERGENCY has been reported by RFI INDUSTRIES at the THUNDER BAY location. If you are ABLE to respond reply 1, if you are UNABLE to respond reply 2. Please log into Safety Conscious to view updates on the situation. ', 
-        from: '+18704937503', 
-        to: '+12506170145'
-    }
-
-    const onSubmit = (e) =>{
+    const fire = (e) =>{
         e.preventDefault();
-        fetch('http://localhost:3002/api/messages', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(messagesdetails)
-        })
-            .then(res => res.json());
+        fetch('http://localhost:3002/api/messages', {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({
+            body: `A FIRE has been reported by companyname at the location location. Please log into Safety Conscious to view updates on the situation. `, 
+            from: '+18704937503', 
+            to: '+12506170145'
+        })}).then(res => res.json());}
+    const spill = (e) =>{
+        e.preventDefault();
+        fetch('http://localhost:3002/api/messages', {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({
+            body: `A SPILL has been reported by companyname at the location location. Please log into Safety Conscious to view updates on the situation. `, 
+            from: '+18704937503', 
+            to: '+12506170145'
         }
+        )}).then(res => res.json());}
+    const injury = (e) =>{
+        e.preventDefault();
+        fetch('http://localhost:3002/api/messages', {method: 'POST',headers: {'Content-Type': 'application/json'},body: JSON.stringify({
+            body: `An INJURY has been reported by companyname at the location location. Please log into Safety Conscious to view updates on the situation. `, 
+            from: '+18704937503', 
+            to: '+12506170145'
+        }
+        )}).then(res => res.json());}
+
+
+
+
+
+
+
+
 return (
     <div>
-        <button onClick={onSubmit}>EMERGENCY</button>
+        <Navbar/>
+        <button onClick={fire}>FIRE</button>
+        <button onClick={spill}>SPILL</button>
+        <button onClick={injury}>INJURY</button>
     </div>
 )
 }

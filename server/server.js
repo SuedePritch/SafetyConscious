@@ -12,9 +12,9 @@ const PORT = process.env.PORT || 3002;
 
 
 let url;
-if(process.env.ENVIRONMENT = 'development'){
+if(process.env.ENVIRONMENT = "development"){
   url = process.env.DEVELOPMENT_URL
-}else if(process.env.ENVIROMENT = 'production'){
+}else if(process.env.ENVIROMENT ='production'){
   url = process.env.PRODUCTION_URL
 }
 
