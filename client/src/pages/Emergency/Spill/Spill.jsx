@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../../../components/Navbar/Navbar';
 
 function Spill(props) {
   const spill = (e) =>{
@@ -10,7 +11,10 @@ function Spill(props) {
     }
     )}).then(res => res.json());}
   return (
-    <div><button onClick={spill}>SPILL</button></div>
+    <div>
+      <Navbar/>
+      <button onClick={spill}>SPILL</button>
+    </div>
   )
 }
 

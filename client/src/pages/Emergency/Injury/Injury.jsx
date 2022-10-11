@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar from '../../../components/Navbar/Navbar';
 
 function Injury(props) {
   const injury = (e) =>{
@@ -10,7 +11,10 @@ function Injury(props) {
     }
     )}).then(res => res.json());}
   return (
-    <div><button onClick={injury}>INJURY</button></div>
+    <div>
+      <Navbar/>
+      <button onClick={injury}>INJURY</button>
+    </div>
   )
 }
 

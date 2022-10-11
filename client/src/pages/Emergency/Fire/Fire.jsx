@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Navbar from '../../../components/Navbar/Navbar';
 function Fire(props) {
     const fire = (e) =>{
         e.preventDefault();
@@ -10,7 +10,10 @@ function Fire(props) {
         })}).then(res => res.json());
     }
   return (
-    <div><button onClick={fire}>FIRE</button></div>
+    <div>
+        <Navbar/>
+        <button onClick={fire}>FIRE</button>
+    </div>
   )
 }
 
