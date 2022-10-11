@@ -17,6 +17,9 @@ import NewFlha from './pages/NewFlha/NewFlha';
 import ReviewFlhas from './pages/ReviewFlhas/ReviewFlhas';
 import AddSafetyTicket from './pages/AddSafetyTicket/AddSafetyTicket';
 import Emergency from './pages/Emergency/Emergency';
+import Fire from './pages/Emergency/Fire/Fire';
+import Spill from './pages/Emergency/Spill/Spill';
+import Injury from './pages/Emergency/Injury/Injury'
 
 
 // APOLLO CONFIG
@@ -25,7 +28,7 @@ const httpLink = createHttpLink({uri: 'http://127.0.0.1:3002/graphql',cache: new
 const authLink = setContext((_, { headers }) => {const token = localStorage.getItem('id_token');return {headers: {...headers,authorization: token ? `Bearer ${token}` : '',},}});
 const client = new ApolloClient({link: authLink.concat(httpLink),cache: new InMemoryCache(),});
 
-
+const messageAPIUrl = 'http://localhost:3002/api/messages'
 
 function App() {
   return (
@@ -49,6 +52,12 @@ function App() {
           <Route path='/approvedFlhas' element={<ApprovedFlhas />} />
           <Route path='/newFlha' element={<NewFlha />} />
           <Route path='/reviewFlhas' element={<ReviewFlhas />} />
+
+          {/* Emergency */}
+          <Route path='/emergency/fire' element={<Fire messageAPIUrl={messageAPIUrl}/>} />
+          <Route path='/emergency/injury' element={<Injury messageAPIUrl={messageAPIUrl}/>} />
+          <Route path='/emergency/spill' element={<Spill messageAPIUrl={messageAPIUrl}/>} />
+
 
           {/* Wildcard/404 Routes - Needs to stay at the bottom */}
           <Route path='*'element={<h1 className='display-2'>Wrong page!</h1>}/>
