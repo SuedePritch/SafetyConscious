@@ -21,7 +21,7 @@ const resolvers = {
     companies: async () =>{
       return await Company.find()
     },
-    //Empolyees
+    //Employees
     employees: async (parent, {company}, context) =>{
       return await User.find({
         company: context.user.company

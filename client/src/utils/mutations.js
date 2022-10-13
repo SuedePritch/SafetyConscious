@@ -31,6 +31,15 @@ export const ADD_USER = gql`
   }
 }
 `
+
+export const  ADD_COMPANY = gql`
+mutation addCompany($company: String!) {
+  addCompany(company: $company) {
+    _id
+    company
+  }
+}
+`
 export const CREATE_JOB_TASK = gql`
 mutation createJobTask($task: String!, $hazard: String!, $control: String!) {
   createJobTask(task: $task, hazard: $hazard, control: $control) {

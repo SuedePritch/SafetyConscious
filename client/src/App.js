@@ -17,6 +17,7 @@ import NewFlha from './pages/NewFlha/NewFlha';
 import ReviewFlhas from './pages/ReviewFlhas/ReviewFlhas';
 import AddSafetyTicket from './pages/AddSafetyTicket/AddSafetyTicket';
 import Emergency from './pages/Emergency/Emergency';
+import Company from './pages/Company/Company'
 import Fire from './pages/Emergency/Fire/Fire';
 import Spill from './pages/Emergency/Spill/Spill';
 import Injury from './pages/Emergency/Injury/Injury'
@@ -52,6 +53,7 @@ function App() {
           <Route path='/approvedFlhas' element={<ApprovedFlhas />} />
           <Route path='/newFlha' element={<NewFlha />} />
           <Route path='/reviewFlhas' element={<ReviewFlhas />} />
+          <Route path='/company' element={<Company />} />
 
           {/* Emergency */}
           <Route path='/emergency/fire' element={<Fire messageAPIUrl={messageAPIUrl}/>} />
